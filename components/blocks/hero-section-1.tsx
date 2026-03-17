@@ -18,7 +18,6 @@ import { CalendlyModal } from '@/components/ui/calendly-modal'
 import TimeLine_01 from '@/components/ui/release-time-line'
 import { Tooltip } from '@/components/ui/tooltip'
 import { Features } from '@/components/ui/features-8'
-import GalleryHoverCarousel from '@/components/ui/gallery-hover-carousel'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
