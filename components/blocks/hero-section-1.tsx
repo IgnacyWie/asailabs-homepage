@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, ArrowLeft, Menu, X, Mic, Car, Brain, LayoutDashboard, ChevronDown, Instagram, Linkedin, Send } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import { BackgroundPathsOverlay } from '@/components/ui/background-paths'
 import { Testimonial } from '@/components/ui/testimonial'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { LogoCloud } from '@/components/ui/logo-cloud-3'
@@ -14,8 +15,10 @@ import { Card, CardContent } from '@/components/ui/card'
 import { TextRevealByWord } from '@/components/ui/text-reveal-by-word'
 import { Timeline, type TimelineEntry } from '@/components/ui/timeline'
 import { CalendlyModal } from '@/components/ui/calendly-modal'
+import TimeLine_01 from '@/components/ui/release-time-line'
 import { Tooltip } from '@/components/ui/tooltip'
 import { Features } from '@/components/ui/features-8'
+import GalleryHoverCarousel from '@/components/ui/gallery-hover-carousel'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -65,15 +68,16 @@ export function HeroSection() {
           <div className="h-[80rem] absolute left-0 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
           <div className="h-[80rem] -translate-y-[350px] absolute left-0 top-0 w-56 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
         </div>
-        <section id="home" className="scroll-mt-24">
-          <div className="relative pt-24 md:pt-36">
+        <section id="home" className="scroll-mt-24 h-screen">
+          <div className="relative h-full">
+            <BackgroundPathsOverlay className="-z-20 opacity-50" />
             <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]" />
-            <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto max-w-7xl px-6 flex flex-col justify-center h-full">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <AnimatedGroup variants={transitionVariants}>
                   <div className="bg-muted group mx-auto flex w-fit items-center gap-2 rounded-full border px-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
                     <span className="text-foreground font-medium">
-                      Made in Europe
+                      Incorporated in Europe
                     </span>
 
                     <span className="text-foreground text-2xl font-medium">
@@ -83,11 +87,11 @@ export function HeroSection() {
                   </div>
                   <h1
                     className="mt-8 max-w-4xl mx-auto text-balance font-semibold text-7xl md:text-8xl lg:mt-16 xl:text-[6rem]">
-                    Master the bake. Automate the rest.
+                    Automating the Unpredictable
                   </h1>
                   <p
                     className="mx-auto mt-8 max-w-2xl text-balance text-lg">
-                    Transform your display into data. Real-time counter recognition designed for high-volume bakeries.
+                    ASAI Labs develops state-of-the-art computer vision and predictive AI solutions to turn operational bottlenecks into automated, data-driven workflows.
                   </p>
                 </AnimatedGroup>
 
@@ -110,70 +114,35 @@ export function HeroSection() {
                     <Button
                       size="lg"
                       className="rounded-xl px-5 text-base"
-                      onClick={(e) => {
-                        e.preventDefault()
-                        setCalendlyOpen(true)
-                      }}
+                      asChild
                     >
-                      <span className="text-nowrap">Request a Demo</span>
+                      <Link href="#projects">
+                        <span className="text-nowrap">Explore our Projects</span>
+                      </Link>
                     </Button>
                   </div>
+                  <Button
+                    key={2}
+                    asChild
+                    size="lg"
+                    variant="ghost"
+                    className="h-11 rounded-xl px-5">
+                    <Link
+                      href="#tech"
+                    >
+                      <span className="text-nowrap">Learn About Our Tech</span>
+                    </Link>
+                  </Button>
                 </AnimatedGroup>
               </div>
             </div>
-
-
-            <AnimatedGroup
-              variants={{
-                container: {
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.05,
-                      delayChildren: 0.75,
-                    },
-                  },
-                },
-                ...transitionVariants,
-              }}>
-              <div className="relative -mr-56 mt-1 overflow-hidden px-2 sm:mr-0 sm:mt-2 md:mt-2">
-                <div
-                  aria-hidden
-                  className="bg-gradient-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
-                />
-                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-7xl overflow-hidden shadow-lg shadow-zinc-950/15 ring-1">
-                  <motion.img
-                    key={heroDashboardTab}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.25 }}
-                    className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block w-full object-cover"
-                    src={HERO_DASHBOARD_IMAGES[heroDashboardTab]?.src ?? HERO_DASHBOARD_IMAGES.main.src}
-                    alt={HERO_DASHBOARD_IMAGES[heroDashboardTab]?.alt ?? HERO_DASHBOARD_IMAGES.main.alt}
-                    width={2700}
-                    height={1440}
-                  />
-                  <motion.img
-                    key={`${heroDashboardTab}-light`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.25 }}
-                    className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden w-full object-cover"
-                    src={HERO_DASHBOARD_IMAGES[heroDashboardTab]?.src ?? HERO_DASHBOARD_IMAGES.main.src}
-                    alt={HERO_DASHBOARD_IMAGES[heroDashboardTab]?.alt ?? HERO_DASHBOARD_IMAGES.main.alt}
-                    width={2700}
-                    height={1440}
-                  />
-                </div>
-              </div>
-            </AnimatedGroup>
           </div>
         </section >
-        <section className="bg-background pb-16 pt-16 md:pb-32">
+        <section className="bg-background pt-16">
           <div className="relative mx-auto max-w-3xl px-6">
             <h2 className="mb-5 text-center font-medium text-foreground text-xl tracking-tight md:text-3xl">
               <div className="flex flex-col space-y-2">
-                <span className="">Trusted by experts.</span>
-                <span className="text-muted-foreground text-lg">Used by the leaders.</span>
+                <span className="">Trusted by Leaders</span>
               </div>
             </h2>
             <div className="mx-auto my-5 h-px max-w-sm bg-border [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
@@ -183,26 +152,8 @@ export function HeroSection() {
             <div className="mt-5 h-px bg-border [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
           </div>
         </section>
-        <section className="scroll-mt-24 bg-background pb-16 pt-16 md:pb-32">
-          <div className="relative mx-auto max-w-7xl px-6">
-            <div className="text-center h-[50vh] pb-32 flex flex-col justify-center">
-              <h2 className="mb-4 md:mb-6 text-2xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight">
-                Tired of empty display cases?
-                <br />
-                Stop letting missed sales cut into your margins.
-              </h2>
-              <p id="how-it-works" className="text-lg md:text-xl text-muted-foreground font-medium">
-                We have the solution for you.
-              </p>
-            </div>
-            <h3 className="mb-8 md:mb-0 text-center font-medium text-foreground text-4xl tracking-tight md:text-6xl">
-              <span className="font-semibold">How It Works</span>
-            </h3>
-            <Timeline data={HOW_IT_WORKS_TIMELINE} />
-          </div>
-        </section>
-        <Features />
-        <FomoCtaSection onGetStartedClick={() => setCalendlyOpen(true)} />
+        <TimeLine_01 />
+        <FomoCtaSection onContactClick={() => setCalendlyOpen(true)} />
         <FaqSection onBookCallClick={() => setCalendlyOpen(true)} />
         <FooterSection />
       </main >
@@ -210,17 +161,17 @@ export function HeroSection() {
   )
 }
 
-function FomoCtaSection({ onGetStartedClick }: { onGetStartedClick: () => void }) {
+function FomoCtaSection({ onContactClick }: { onContactClick: () => void }) {
   return (
     <section className="bg-background">
       <div className="mx-auto max-w-7xl px-6">
         <TextRevealByWord
           className="border-t border-border h-[85vh] md:h-[90vh]"
-          text="Every empty shelf is a missed sale. Join ASAI Labs now—automate your inventory before today’s stockout becomes tomorrow’s lost revenue."
+          text="Have a complex operational challenge? Our lab builds custom computer vision and predictive models for enterprise clients. Let's talk about your use case."
           footer={
             <div className="bg-foreground/10 rounded-[14px] border p-0.5">
-              <Button size="lg" className="rounded-xl px-6 text-base" onClick={onGetStartedClick}>
-                <span className="text-nowrap">Get started</span>
+              <Button size="lg" className="rounded-xl px-6 text-base" onClick={onContactClick}>
+                <span className="text-nowrap">Get in Touch</span>
               </Button>
             </div>
           }
@@ -232,36 +183,36 @@ function FomoCtaSection({ onGetStartedClick }: { onGetStartedClick: () => void }
 
 const FAQS = [
   {
-    q: 'Do I need to install expensive cameras?',
-    a: 'Zero hardware required. Your team simply uses the smartphones or tablets they already own. No wiring, no installers, and no complex maintenance—just an app that works.',
+    q: 'Do your solutions require custom hardware installations?',
+    a: 'Rarely. We specialize in software-defined automation. Our computer vision and predictive platforms are designed to run on edge devices, standard smartphones, or integrate seamlessly with your existing infrastructure. Zero expensive retrofits required.',
   },
   {
-    q: 'Are you recording my customers?',
-    a: 'Never. Our AI is built with privacy-first architecture. It is trained to ignore faces and focus exclusively on "inventory geometry"—extracting fill ratios from your counters while keeping your customers anonymous.',
+    q: 'How do you handle data privacy and security?',
+    a: 'Privacy by design is our baseline. Our vision models extract geometric and operational data—not personal identities. We utilize enterprise-grade encryption (AES-256), strict GDPR compliance, and process data without storing Personally Identifiable Information (PII).',
   },
   {
-    q: 'Will this replace my employees?',
-    a: 'Not at all. We believe bakers should be baking, not holding clipboards. Our system empowers your staff by removing the most tedious part of their job: manual inventory counting.',
+    q: 'Are these AI models designed to replace human workforces?',
+    a: 'Our philosophy is augmentation, not replacement. We build tools that eliminate tedious, manual bottlenecks—whether that is counting retail inventory or logging fleet compliance—freeing your teams to focus on high-leverage, strategic work.',
   },
   {
-    q: 'How does this differ from my POS data?',
-    a: 'Your POS tells you what you sold; we tell you what is actually left on the shelf. We bridge the "visibility gap" to identify theft, waste, and restocking opportunities that sales data alone cannot see.',
+    q: 'How does your AI differ from standard operational analytics?',
+    a: 'Traditional dashboards tell you what happened yesterday. Our real-time vision systems and predictive models tell you what is happening right now, and what will happen tomorrow—closing the visibility gap between physical operations and digital oversight.',
   },
   {
-    q: 'How accurate is the recognition?',
-    a: 'Surgical. Our custom-trained vision models can distinguish between sourdough, rye, and baguettes even when they are overlapping or tightly packed in display baskets.',
+    q: 'Can your vision models recognize our specific proprietary assets?',
+    a: 'Yes. We train custom machine learning models tailored to your exact environment. Whether tracking logistics fleets, artisan retail inventory, or compliance documents, our models achieve surgical precision across diverse, unpredictable conditions.',
   },
   {
-    q: 'How fast can we see results?',
-    a: 'Immediately. Once the first photo is snapped, our ML model processes the fill ratios in seconds, and your dashboard populates with actionable data instantly.',
+    q: 'Can your systems operate in chaotic or low-light environments?',
+    a: 'Absolutely. We engineer our solutions for the real world, not just the laboratory. Our systems compensate for poor lighting, overlapping objects, and the beautiful chaos of active industrial or retail floors.',
   },
   {
-    q: 'Can it handle low-light or crowded counters?',
-    a: 'Yes. The system was designed for the "beautiful chaos" of a busy bakery morning. It compensates for varied lighting and recognizes products even through glass display cases.',
+    q: 'How quickly can an ASAI Labs solution be deployed?',
+    a: 'We operate with the agility of a startup and the rigor of an enterprise lab. By leveraging our modular architecture and pre-trained foundation models, we can deploy production-ready pilots in weeks, not years.',
   },
   {
-    q: 'What happens to the images after processing?',
-    a: 'Security is paramount. Images are processed through an encrypted pipeline. Once the inventory data is extracted, you have full control over whether images are archived for audit trails or instantly deleted.',
+    q: 'Do you take on custom engineering projects for enterprise clients?',
+    a: 'Yes. While we have a portfolio of ready-to-deploy platforms, our core strength is partnering with enterprise leaders to engineer bespoke AI solutions for their most complex operational bottlenecks. Get in touch to discuss your specific use case.',
   },
 ]
 
@@ -426,9 +377,10 @@ const HOW_IT_WORKS_TIMELINE: TimelineEntry[] = [
 
 const menuItems = [
   { name: 'Home', href: '#home' },
-  { name: 'How it works', href: '#how-it-works' },
-  { name: 'Features', href: '#savings' },
-  { name: 'FAQ', href: '#faq' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Technology', href: '#savings' },
+  { name: 'About Us', href: '#faq' },
+  { name: 'Blog', href: '#faq' },
 ]
 
 const logos = [
@@ -438,9 +390,14 @@ const logos = [
     href: "https://goraco-polecam.pl/"
   },
   {
-    src: "/jush.png",
-    alt: "Zabka Jush",
-    href: "https://jush.pl/"
+    src: "/lsp.png",
+    alt: "LSP Group",
+    href: "https://lspgroup.pl"
+  },
+  {
+    src: "/zwc.png",
+    alt: "ZWC",
+    href: "https://zerowasteconsulting.pl"
   },
   {
     src: "/enata.png",
@@ -448,14 +405,9 @@ const logos = [
     href: "https://enatabread.pl/"
   },
   {
-    src: "/bakery.png",
-    alt: "The Bakery",
-    href: "https://www.instagram.com/thebakerywarszawa/"
-  },
-  {
-    src: "/szalata.png",
-    alt: "Szalata i szok",
-    href: "https://www.instagram.com/szalata_i_szok/"
+    src: "/cisowianka.png",
+    alt: "Naleczow Zdroj",
+    href: "https://naleczowzdroj.pl/"
   },
 ]
 
@@ -581,13 +533,13 @@ const HeroHeader = ({ onGetStartedClick }: { onGetStartedClick?: () => void }) =
                   size="sm"
                   className={cn(isScrolled && 'lg:hidden')}
                   onClick={onGetStartedClick}>
-                  <span>Get Started</span>
+                  <span>Contact Us</span>
                 </Button>
                 <Button
                   size="sm"
                   className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}
                   onClick={onGetStartedClick}>
-                  <span>Get Started</span>
+                  <span>Contact Us</span>
                 </Button>
               </div>
             </div>
