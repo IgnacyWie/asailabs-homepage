@@ -556,9 +556,9 @@ function FooterSection() {
       <div className="mx-auto max-w-6xl px-6 py-14 md:py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <h2 className="mb-4 text-2xl font-bold tracking-tight md:text-3xl">Perfect your bake.</h2>
+            <h2 className="mb-4 text-2xl font-bold tracking-tight md:text-3xl">Automate the unpredictable.</h2>
             <p className="mb-6 text-sm md:text-base text-zinc-400">
-              Join our newsletter for the latest in bakery automation and visual inventory insights.
+              Join our newsletter for the latest insights in enterprise AI, computer vision, and operational automation.
             </p>
             <form className="relative">
               <input
@@ -579,19 +579,22 @@ function FooterSection() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Product</h3>
+            <h3 className="mb-4 text-lg font-semibold">Solutions</h3>
             <nav className="space-y-2 text-sm text-zinc-300">
-              <Link href="#how-it-works" className="block transition-colors hover:text-white">
-                How it works
+              <Link href="https://expo.asailabs.com" className="block transition-colors hover:text-white">
+                Exponata AI
               </Link>
-              <Link href="#savings" className="block transition-colors hover:text-white">
-                ROI & Savings
+              <Link href="#envista" className="block transition-colors hover:text-white">
+                Envista AI
               </Link>
-              <Link href="#faq" className="block transition-colors hover:text-white">
-                FAQ
+              <Link href="#fleet" className="block transition-colors hover:text-white">
+                Fleet Inspection
               </Link>
-              <Link href="#link" className="block transition-colors hover:text-white">
-                Pricing
+              <Link href="https://dronepass.vercel.app" className="block transition-colors hover:text-white">
+                MyCard
+              </Link>
+              <Link href="https://getmycard.eu" className="block transition-colors hover:text-white">
+                DronePass
               </Link>
             </nav>
           </div>
@@ -599,7 +602,7 @@ function FooterSection() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Contact</h3>
             <address className="space-y-2 text-sm not-italic text-zinc-300">
-              <p>Bakery Intelligence & Ops</p>
+              <p>Enterprise Partnerships</p>
               <p>
                 Email:{' '}
                 <Link href="mailto:hello@asailabs.com" className="underline underline-offset-2">
@@ -607,7 +610,7 @@ function FooterSection() {
                 </Link>
               </p>
               <p>Support:{' '}
-                <Link href="mailto:hello@asailabs.com" className="underline underline-offset-2">
+                <Link href="mailto:support@asailabs.com" className="underline underline-offset-2">
                   support@asailabs.com
                 </Link>
               </p>
@@ -615,7 +618,7 @@ function FooterSection() {
           </div>
 
           <div className="relative">
-            <h3 className="mb-4 text-lg font-semibold">Follow ASAI</h3>
+            <h3 className="mb-4 text-lg font-semibold">Follow ASAI Labs</h3>
             <div className="mb-6 flex flex-wrap gap-3">
               <Tooltip text="LinkedIn">
                 <Button
@@ -649,7 +652,7 @@ function FooterSection() {
               </Tooltip>
             </div>
             <p className="text-sm text-zinc-400">
-              Transforming bakery operations with visual intelligence.
+              Building state-of-the-art computer vision and predictive AI for the physical world.
             </p>
           </div>
         </div>
@@ -657,10 +660,10 @@ function FooterSection() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center md:flex-row">
           <p className="text-sm text-zinc-400">© {new Date().getFullYear()} ASAI Labs. All rights reserved.</p>
           <nav className="flex flex-wrap justify-center gap-4 text-sm text-zinc-300">
-            <Link href="#link" className="transition-colors hover:text-white">
+            <Link href="#privacy" className="transition-colors hover:text-white">
               Privacy Policy
             </Link>
-            <Link href="#link" className="transition-colors hover:text-white">
+            <Link href="#terms" className="transition-colors hover:text-white">
               Terms of Service
             </Link>
           </nav>
