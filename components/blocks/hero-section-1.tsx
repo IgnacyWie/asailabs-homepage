@@ -18,6 +18,7 @@ import { CalendlyModal } from '@/components/ui/calendly-modal'
 import TimeLine_01 from '@/components/ui/release-time-line'
 import { Tooltip } from '@/components/ui/tooltip'
 import { Features } from '@/components/ui/features-8'
+import TeamShowcase from '@/components/ui/team-showcase'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -137,7 +138,7 @@ export function HeroSection() {
             </div>
           </div>
         </section >
-        <section className="bg-background pt-16">
+        <section id="projects" className="bg-background pt-16">
           <div className="relative mx-auto max-w-3xl px-6">
             <h2 className="mb-5 text-center font-medium text-foreground text-xl tracking-tight md:text-3xl">
               <div className="flex flex-col space-y-2">
@@ -151,8 +152,30 @@ export function HeroSection() {
             <div className="mt-5 h-px bg-border [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
           </div>
         </section>
-        <TimeLine_01 />
+        <section id="projects">
+          <TimeLine_01 />
+        </section>
         <FomoCtaSection onContactClick={() => setCalendlyOpen(true)} />
+        <section id="about" className="bg-background py-12">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto mt-16 max-w-4xl space-y-3">
+              <h1 className=" text-3xl font-semibold tracking-tight md:text-5xl">
+                About Us
+              </h1>
+              <h2 className=" text-xl font-medium tracking-tight text-zinc-950">
+                From Silicon Valley scale to enterprise operations.
+              </h2>
+              <p className="text-base leading-relaxed text-zinc-500 md:text-lg">
+                Forged in the trenches of a successful Y Combinator startup, our founding
+                team of Polish and Czech engineers knows what it takes to ship mission-critical
+                software. We founded ASAI Labs to bridge the gap between cutting-edge AI
+                research and the messy reality of physical operations. We don't just build models;
+                we deploy solutions that protect margins and eradicate manual workflows.
+              </p>
+            </div>
+            <TeamShowcase />
+          </div>
+        </section>
         <FaqSection onBookCallClick={() => setCalendlyOpen(true)} />
         <FooterSection />
       </main >
@@ -377,9 +400,10 @@ const HOW_IT_WORKS_TIMELINE: TimelineEntry[] = [
 const menuItems = [
   { name: 'Home', href: '#home' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Technology', href: '#savings' },
-  { name: 'About Us', href: '#faq' },
-  { name: 'Blog', href: '#faq' },
+  { name: 'Technology', href: '#tech' },
+  { name: 'About Us', href: '#about' },
+  { name: 'FAQ', href: '#faq' },
+  { name: 'Blog', href: '#blog' },
 ]
 
 const logos = [

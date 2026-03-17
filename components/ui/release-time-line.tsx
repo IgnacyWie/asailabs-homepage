@@ -179,7 +179,7 @@ export default function TimeLine_01({
   }, []);
 
   return (
-    <section className={cn("bg-background py-32", className)} id="projects">
+    <section className={cn("bg-background py-32", className)} >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-3xl">
           <h1 className="mb-4 text-3xl font-semibold tracking-tight md:text-5xl">
