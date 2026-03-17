@@ -1,0 +1,68 @@
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+
+type Logo = {
+  src?: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  text?: string;
+  href: string;
+  className?: string;
+};
+
+type LogoCloudProps = React.ComponentProps<"div"> & {
+  logos: Logo[];
+};
+
+export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
+  // Use the provided order; InfiniteSlider already renders two copies for seamless looping
+  const repeatedLogos = logos;
+
+  return (
+    <div
+      {...props}
+      className={cn(
+        "w-full overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent 0%,black 12%,black 88%,transparent 100%)]",
+        className
+      )}
+    >
+      <InfiniteSlider gap={42} reverse speed={80} speedOnHover={25}>
+        {repeatedLogos.map((logo, index) => {
+          if (logo.text) {
+            return (
+              <span
+                key={`logo-${logo.alt}-${index}`}
+                aria-label={logo.alt}
+                className={cn(
+                  "pointer-events-none select-none whitespace-nowrap text-xl md:text-2xl font-semibold",
+                  logo.className,
+                )}
+              >
+                {logo.text}
+              </span>
+            );
+          }
+
+          return (
+            <Link href={logo.href ?? "#"} key={`logo-${logo.alt}-${index}`} >
+              <img
+                alt={logo.alt}
+                className={cn(
+                  "pointer-events-none h-12 select-none md:h-12 lg:h-12 dark:brightness-0 dark:invert",
+                  logo.className,
+                )}
+                height={logo.height || "auto"}
+
+                loading="lazy"
+                src={logo.src!}
+                width={logo.width || "auto"}
+              />
+            </Link>
+          );
+        })}
+      </InfiniteSlider>
+    </div>
+  );
+}
