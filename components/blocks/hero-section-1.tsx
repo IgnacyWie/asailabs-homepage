@@ -169,7 +169,7 @@ export function HeroSection() {
                 Forged in the trenches of a successful Y Combinator startup, our founding
                 team of Polish and Czech engineers knows what it takes to ship mission-critical
                 software. We founded ASAI Labs to bridge the gap between cutting-edge AI
-                research and the messy reality of physical operations. We don't just build models;
+                research and the messy reality of physical operations. We don&apos;t just build models;
                 we deploy solutions that protect margins and eradicate manual workflows.
               </p>
             </div>
