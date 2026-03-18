@@ -40,10 +40,10 @@ export const defaultEntries: TimeLine_01Entry[] = [
       "Multi-store oversight from a single, centralized dashboard",
     ],
     image:
-      "/phone-capture.png",
+      "/expo.png",
     button: {
       url: "https://expo.asailabs.com",
-      text: "See the Landing Page",
+      text: "Go to the Website",
     },
   },
   {
@@ -103,7 +103,7 @@ export const defaultEntries: TimeLine_01Entry[] = [
       "/mycard.png",
     button: {
       url: "https://getmycard.eu", // Add your MyCard demo URL here
-      text: "Try the Demo",
+      text: "Go to the Website",
     },
   },
   {
@@ -123,7 +123,7 @@ export const defaultEntries: TimeLine_01Entry[] = [
       "/dronepass.png",
     button: {
       url: "https://dronepass.vercel.app",
-      text: "See in Action",
+      text: "Go to the Website",
     },
   }
 ];
