@@ -30,7 +30,7 @@ const DEFAULT_MEMBERS: TeamMember[] = [
   {
     id: "1",
     name: "Mateusz",
-    role: "Chief Operations Officer",
+    role: "Chief Executive Officer",
     image:
       "/mateusz.jpg",
     social: { linkedin: "https://www.linkedin.com/in/mateuszpiatkowski", website: "https://mati.wie.dev" },

@@ -176,7 +176,7 @@ export function HeroSection() {
             <BrandsGrid
               brands={trustedBrands}
               className="py-16"
-              title="Engineering and operational pedigree from:"
+              title="Engineering pedigree from:"
             />
           </div>
         </section>
