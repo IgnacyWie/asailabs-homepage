@@ -287,24 +287,9 @@ const logos = [
     href: "https://goraco-polecam.pl/"
   },
   {
-    src: "/lsp.png",
-    alt: "LSP Group",
-    href: "https://lspgroup.pl"
-  },
-  {
-    src: "/zwc.png",
-    alt: "ZWC",
-    href: "https://zerowasteconsulting.pl"
-  },
-  {
     src: "/enata.png",
     alt: "Enata Bread",
     href: "https://enatabread.pl/"
-  },
-  {
-    src: "/cisowianka.png",
-    alt: "Naleczow Zdroj",
-    href: "https://naleczowzdroj.pl/"
   },
 ]
 
