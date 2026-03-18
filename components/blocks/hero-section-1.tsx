@@ -137,7 +137,7 @@ export function HeroSection() {
           </div>
         </section >
         <section className="bg-background pt-16">
-          <div className="relative mx-auto max-w-3xl px-6">
+          <div className="relative mx-auto max-w-4xl px-6">
             <h2 className="mb-5 text-center font-medium text-foreground text-xl tracking-tight md:text-3xl">
               <div className="flex flex-col space-y-2">
                 <span className="">Trusted by Leaders</span>
