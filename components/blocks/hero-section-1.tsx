@@ -82,12 +82,14 @@ export function HeroSection() {
                     <span className="text-foreground text-2xl font-medium">
                       🇪🇺
                     </span>
-
                   </div>
+
+                  {/* Adjusted the responsive text classes here */}
                   <h1
-                    className="mt-8 max-w-4xl mx-auto text-balance font-semibold text-7xl md:text-8xl lg:mt-16 xl:text-[6rem]">
+                    className="mt-8 max-w-4xl mx-auto text-balance font-semibold text-5xl sm:text-6xl md:text-8xl lg:mt-16 xl:text-[6rem]">
                     Automating the Unpredictable
                   </h1>
+
                   <p
                     className="mx-auto mt-8 max-w-2xl text-balance text-lg">
                     ASAI Labs develops state-of-the-art computer vision and predictive AI solutions to turn operational bottlenecks into automated, data-driven workflows.

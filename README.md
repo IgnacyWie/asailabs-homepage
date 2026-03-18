@@ -1,4 +1,4 @@
-# Exponata AI
+# ASAI Labs
 
 A modern Next.js website with a beautiful hero section built with shadcn/ui, Tailwind CSS, and TypeScript.
 
