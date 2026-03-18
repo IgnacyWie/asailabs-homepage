@@ -17,6 +17,7 @@ import { CalendlyModal } from '@/components/ui/calendly-modal'
 import TimeLine_01 from '@/components/ui/release-time-line'
 import { Tooltip } from '@/components/ui/tooltip'
 import TeamShowcase from '@/components/ui/team-showcase'
+import { BrandsGrid } from '@/components/ui/brands'
 import { cn } from '@/lib/utils'
 
 const transitionVariants = {
@@ -172,6 +173,11 @@ export function HeroSection() {
               </p>
             </div>
             <TeamShowcase />
+            <BrandsGrid
+              brands={trustedBrands}
+              className="py-16"
+              title="Engineering and operational pedigree from:"
+            />
           </div>
         </section>
         <FaqSection onBookCallClick={() => setCalendlyOpen(true)} />
@@ -297,6 +303,33 @@ const logos = [
     src: "/cisowianka.png",
     alt: "Naleczow Zdroj",
     href: "https://naleczowzdroj.pl/"
+  },
+]
+
+const trustedBrands = [
+  {
+    name: 'Y Combinator',
+    logo: '/yc.png',
+  },
+  {
+    name: 'asml',
+    logo: '/asml.png',
+  },
+  {
+    name: 'Stanford',
+    logo: '/stanford.png',
+  },
+  {
+    name: 'tue',
+    logo: '/tue.png',
+  },
+  {
+    name: 'code',
+    logo: '/CODE.png',
+  },
+  {
+    name: 'charles',
+    logo: '/charles.png',
   },
 ]
 
