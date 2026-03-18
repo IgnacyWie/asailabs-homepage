@@ -2,22 +2,20 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { ArrowRight, ArrowLeft, Menu, X, Mic, Car, Brain, LayoutDashboard, ChevronDown, Instagram, Linkedin, Send } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X, ChevronDown, Instagram, Linkedin, Send } from 'lucide-react'
+import { motion, } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { BackgroundPathsOverlay } from '@/components/ui/background-paths'
-import { Testimonial } from '@/components/ui/testimonial'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { LogoCloud } from '@/components/ui/logo-cloud-3'
 import { PulseVoiceRecorder } from '@/components/ui/pulse-voice-recorder'
 import { Tabs, type ITab } from '@/components/ui/tabs'
 import { Card, CardContent } from '@/components/ui/card'
 import { TextRevealByWord } from '@/components/ui/text-reveal-by-word'
-import { Timeline, type TimelineEntry } from '@/components/ui/timeline'
+import { type TimelineEntry } from '@/components/ui/timeline'
 import { CalendlyModal } from '@/components/ui/calendly-modal'
 import TimeLine_01 from '@/components/ui/release-time-line'
 import { Tooltip } from '@/components/ui/tooltip'
-import { Features } from '@/components/ui/features-8'
 import TeamShowcase from '@/components/ui/team-showcase'
 import { cn } from '@/lib/utils'
 
@@ -138,7 +136,7 @@ export function HeroSection() {
             </div>
           </div>
         </section >
-        <section id="projects" className="bg-background pt-16">
+        <section className="bg-background pt-16">
           <div className="relative mx-auto max-w-3xl px-6">
             <h2 className="mb-5 text-center font-medium text-foreground text-xl tracking-tight md:text-3xl">
               <div className="flex flex-col space-y-2">
@@ -157,7 +155,7 @@ export function HeroSection() {
         </section>
         <FomoCtaSection onContactClick={() => setCalendlyOpen(true)} />
         <section id="about" className="bg-background py-12">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-4xl px-6">
             <div className="mx-auto mt-16 max-w-4xl space-y-3">
               <h1 className=" text-3xl font-semibold tracking-tight md:text-5xl">
                 About Us
@@ -241,7 +239,7 @@ const FAQS = [
 function FaqSection({ onBookCallClick }: { onBookCallClick?: () => void }) {
   return (
     <section id="faq" className="scroll-mt-24 bg-gray-50 pb-16 pt-4 md:pb-32 md:pt-6 dark:bg-transparent">
-      <div className="mx-auto max-w-3xl lg:max-w-5xl px-6">
+      <div className="mx-auto max-w-3xl lg:max-w-4xl px-6">
         <div className="mb-10 md:mb-14 text-center">
           <h2 className="text-2xl md:text-4xl font-bold text-foreground tracking-tight">FAQ</h2>
           <p className="mt-4 text-base md:text-lg text-muted-foreground">
@@ -273,138 +271,6 @@ function FaqSection({ onBookCallClick }: { onBookCallClick?: () => void }) {
 }
 
 
-const ErrorTypeTabs = () => {
-  const [selectedError, setSelectedError] = React.useState('wheel-hub-bearings');
-
-  const errorTabs: ITab[] = [
-    {
-      title: 'Wheel Hub Bearings',
-      value: 'wheel-hub-bearings',
-      tooltip: 'Grinding or rumbling noise that increases with speed'
-    },
-    {
-      title: 'Ball-Joints',
-      value: 'ball-joints',
-      tooltip: 'Clunking noise when turning or going over bumps'
-    },
-    {
-      title: 'Tensioner Belt',
-      value: 'tensioner-belt',
-      tooltip: 'High-pitched squealing sound, especially on cold starts'
-    },
-    {
-      title: 'Motor Bearings',
-      value: 'motor-bearings',
-      tooltip: 'Deep rumbling or grinding noise from the engine'
-    },
-  ];
-
-  return (
-    <div className="w-full max-w-4xl mx-auto">
-      <Tabs
-        selected={selectedError}
-        setSelected={setSelectedError}
-        tabs={errorTabs}
-        variant="primary"
-      />
-      <div className="mt-8 md:mt-12">
-        <PulseVoiceRecorder selectedErrorType={selectedError} />
-      </div>
-    </div>
-  );
-};
-
-const HOW_IT_WORKS_TIMELINE: TimelineEntry[] = [
-  {
-    title: 'Step 1',
-    content: (
-      <>
-        <h4 className="text-lg md:text-xl font-semibold text-black dark:text-white">
-          Snap a quick photo
-        </h4>
-        <p className="mt-2 text-sm md:text-base text-black/80 dark:text-white/80">
-          Your staff receives a gentle notification to take a picture of the display cases. No complex hardware installations or clunky scanning wands are required—just a quick photo using any smartphone or tablet.
-        </p>
-        <div className="mt-6">
-          <img
-            src="/phone-capture.png"
-            alt="Employee taking a photo of a bakery counter"
-            className="w-full max-w-3xl rounded-xl object-contain"
-          />
-        </div>
-      </>
-    ),
-  },
-  {
-    title: 'Step 2',
-    content: (
-      <>
-        <h4 className="text-lg md:text-xl font-semibold text-black dark:text-white">
-          Custom vision AI processes the image
-        </h4>
-        <p className="mt-2 text-sm md:text-base text-black/80 dark:text-white/80">
-          The images are instantly routed to our custom-trained Machine Learning vision model. Designed specifically for bakeries, it effortlessly recognizes overlapping artisan loaves, intricate pastries, and varying tray layouts.
-        </p>
-        <div className="mt-6">
-          <img
-            src="/ai-processing.png"
-            alt="AI vision model identifying different types of bread"
-            className="w-full max-w-3xl rounded-xl object-contain"
-          />
-        </div>
-      </>
-    ),
-  },
-  {
-    title: 'Step 3',
-    content: (
-      <>
-        <h4 className="text-lg md:text-xl font-semibold text-black dark:text-white">
-          Extract precise fill ratios
-        </h4>
-        <p className="mt-2 text-sm md:text-base text-black/80 dark:text-white/80">
-          The system analyzes the visual data to calculate exact fill ratios for every shelf and basket. It knows immediately what is fully stocked, what is running low, and what has sold out, with clinical precision.
-        </p>
-        <div className="mt-6">
-          <img
-            src="/fill-ratio.png"
-            alt="Visual overlay showing percentage of counter fill ratios"
-            className="w-full max-w-3xl rounded-xl object-contain"
-          />
-        </div>
-      </>
-    ),
-  },
-  {
-    title: 'Step 4',
-    content: (
-      <>
-        <h4 className="text-lg md:text-xl font-semibold text-black dark:text-white">
-          Manage everything from a sleek dashboard
-        </h4>
-        <p className="mt-2 text-sm md:text-base text-black/80 dark:text-white/80">
-          All extracted data is instantly aggregated into a centralized, minimalist dashboard. Monitor real-time availability, track sales velocity, and reduce end-of-day waste without ever doing a manual count.
-        </p>
-        <div className="mt-6">
-          <img
-            src="/test.png"
-            alt="Minimalist SaaS dashboard showing bakery inventory analytics"
-            className="w-full max-w-3xl rounded-xl object-contain"
-          />
-        </div>
-      </>
-    ),
-  },
-]
-
-const menuItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Technology', href: '#tech' },
-  { name: 'About Us', href: '#about' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'Blog', href: '#blog' },
-]
 
 const logos = [
   {
@@ -434,6 +300,15 @@ const logos = [
   },
 ]
 
+const menuItems = [
+  { name: 'Home', href: '#home' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Technology', href: '#tech' },
+  { name: 'About Us', href: '#about' },
+  { name: 'FAQ', href: '#faq' },
+  { name: 'Blog', href: '#blog' },
+]
+
 const HeroHeader = ({ onGetStartedClick }: { onGetStartedClick?: () => void }) => {
   const [menuState, setMenuState] = React.useState(false)
   const [isScrolled, setIsScrolled] = React.useState(false)
@@ -442,7 +317,9 @@ const HeroHeader = ({ onGetStartedClick }: { onGetStartedClick?: () => void }) =
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
-      const sectionIds = ['home', 'how-it-works', 'savings', 'faq']
+
+      const sectionIds = ['home', 'projects', 'tech', 'about', 'faq', 'blog']
+
       let currentId = '#home'
       let minOffset = Number.POSITIVE_INFINITY
 
